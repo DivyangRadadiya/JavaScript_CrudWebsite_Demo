@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Task</title>
+  </head>
+  <body>
+    <div class="employee-form">
+      <form
+        class="reg-Form"
+        onsubmit="event.preventDefault();"
+        name="RegForm"
+        autocomplete="off"
+      >
+        <div>
+          <label>FirstName:-</label>
+          <input type="text" name="firstName" id="firstName" />
+        </div>
+        <div>
+          <label>MiddleName:-</label>
+          <input type="text" name="middleName" id="middleName" />
+        </div>
+        <div>
+          <label>LastName:-</label>
+          <input type="text" name="lastName" id="lastName" />
+        </div>
+        <div>
+          <label>Date Of Birth:-</label>
+          <input type="date" name="birthday" id="birth-date" />
+        </div>
+        <div class="radio-button">
+          <label>Gender:-</label>
+          <input type="radio" name="gender" value="male" id="male" /> Male
+          <input type="radio" name="gender" value="female" id="female" /> Female
+        </div>
+        <div class="state-lists">
+          <label>Country:-</label>
+          <select name="country" id="countryName" onchange="getState(event)">
+            <option value="" selected="selected">Select Country</option>
+          </select>
+        </div>
+        <div class="state-lists">
+          <label>State:-</label>
+          <select name="state" id="stateName" onchange="getCity(event)">
+            <option value="" selected="selected">Select State</option>
+          </select>
+        </div>
+        <div class="state-lists">
+          <label>City:-</label>
+          <select name="city" id="cityName">
+            <option value="" selected="selected">Select City</option>
+          </select>
+        </div>
+        <div class="married-status">
+          <label>Is Married:-</label>
+          <input
+            type="checkbox"
+            id="Checkbox"
+            class="Checkbox"
+            name="Checkbox"
+          />
+        </div>
+
+        <div class="form-action-buttons">
+          <input
+            type="submit"
+            value="Submit"
+            name="submitValue"
+            id="submitButton"
+            onclick="insertRecord();"
+          />
+          <input
+            type="submit"
+            value="Update"
+            id="updateButton"
+            onclick="updateRecord();"
+          />
+          <input type="reset" class="clear-btn" value="Clear" />
+        </div>
+      </form>
+    </div>
+    <div class="select-delete-btn">
+      <input
+        type="button"
+        value="selectAll"
+        name="submitValue"
+        id="select-btn"
+        onclick="selectAll();"
+      />
+      <input
+        type="button"
+        value="deleteSelect"
+        id="delete-btn"
+        onclick="deleteAll();"
+      />
+    </div>
+    <br />
+    <div class="employees-table">
+      <table class="list" id="employeeList">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>MiddleName</th>
+            <th>LastName</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Is Married</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="showdata"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
